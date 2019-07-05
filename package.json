@@ -1,0 +1,13 @@
+{
+  "name": "manydb",
+  "version": "0.1.0",
+  "description": "Use different databases within one API.",
+  "main": "index.js",
+  "author": "Joshua Nies",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "mysql": "^2.17.1",
+    "pg": "^7.11.0"
+  }
+}
