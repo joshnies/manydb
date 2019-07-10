@@ -1,14 +1,30 @@
-const mysql = require('mysql');
-const { Pool } = require('pg');
+//const mysql = require('mysql');
+//const { Pool } = require('pg');
 
 const { MYSQL, POSTGRES } = require('./constants');
 
 class ManyDb {
+  db;
   config;
   connection;
 
   constructor(config) {
     this.config = config;
+
+    if (this.config.type != null) {
+      switch(this.config.type) {
+        case MYSQL:
+          this.db = require('mysql');
+          break;
+        case POSTGRES:
+          const { Pool } = require('pg');
+          this.db = Pool;
+          break;
+        default:
+          console.log('Database type invalid.');
+          break;
+      }
+    }
   }
 
   /**
@@ -20,7 +36,7 @@ class ManyDb {
     return new Promise((resolve, reject) => {
       switch (this.config.type) {
         case MYSQL:
-          connection = mysql.createConnection({
+          connection = this.db.createConnection({
             host: this.config.host ? this.config.host : 'localhost',
             user: this.config.user,
             password: this.config.password,
@@ -36,7 +52,7 @@ class ManyDb {
           });
           break;
         case POSTGRES:
-          this.connection = new Pool({
+          this.connection = new this.db({
             host: this.config.host,
             user: this.config.user,
             password: this.config.password ? this.config.password : null,
