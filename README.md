@@ -5,6 +5,7 @@
 Lightweight multi-idiom database API for Node.js.
 
 ## Install
+Install ManyDB:
 ```sh
 yarn add manydb
 
@@ -13,8 +14,18 @@ yarn add manydb
 npm install manydb
 ```
 
+Then install the package for your desired database (choose one):
+```sh
+yarn add pg     # PostgreSQL
+yarn add mysql  # MySQL
+```
+
+> It is possible to use multiple different database types, but in most cases only one should be used in order to minimize dependencies.
+
 ## Usage
-ManyDB currently supports MySQL and PostgreSQL.
+To use ManyDB, create a database with a config object and connect to it.  You can then run queries on the database like normal.
+
+**ManyDB currently supports MySQL and PostgreSQL.**
 
 ### Example
 ```js
