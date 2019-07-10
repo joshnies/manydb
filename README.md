@@ -1,6 +1,6 @@
 # manydb
 
-[! [npm version](https://img.shields.io/npm/v/manydb.svg)](https://www.npmjs.com/package/manydb)
+[![npm version](https://img.shields.io/npm/v/manydb.svg)](https://www.npmjs.com/package/manydb)
 
 Lightweight multi-idiom database API for Node.js.
 
