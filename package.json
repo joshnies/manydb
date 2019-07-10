@@ -1,6 +1,6 @@
 {
   "name": "manydb",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lightweight multi-idiom database API.",
   "main": "index.js",
   "author": "Joshua Nies",
