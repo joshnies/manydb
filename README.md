@@ -1,5 +1,8 @@
 # manydb
-Use different databases within one API for Node.js.
+
+[! [npm version](https://img.shields.io/npm/v/manydb.svg)](https://www.npmjs.com/package/manydb)
+
+Lightweight multi-idiom database API for Node.js.
 
 ## Install
 ```sh

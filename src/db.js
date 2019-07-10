@@ -1,5 +1,8 @@
 const { MYSQL, POSTGRES } = require('./constants');
 
+/**
+ * ManyDB object for communicating with a database.
+ */
 class ManyDb {
   db;
   config;
@@ -87,7 +90,7 @@ class ManyDb {
   }
 
   /**
-   * Disconnect from the databse.
+   * Disconnect from the database.
    * 
    * @returns Promise
    */
