@@ -1,6 +1,3 @@
-//const mysql = require('mysql');
-//const { Pool } = require('pg');
-
 const { MYSQL, POSTGRES } = require('./constants');
 
 class ManyDb {
@@ -11,6 +8,7 @@ class ManyDb {
   constructor(config) {
     this.config = config;
 
+    // Set and require database type
     if (this.config.type != null) {
       switch(this.config.type) {
         case MYSQL:
@@ -21,9 +19,23 @@ class ManyDb {
           this.db = Pool;
           break;
         default:
-          console.log('Database type invalid.');
-          break;
+          throw new Error(`Invalid database type: ${this.config.type}`);
       }
+    } else {
+      throw new Error('No database type was specified.');
+    }
+
+    // Validate config
+    if (this.config.user == null) {
+      throw new Error('No database user was specified.');
+    }
+
+    if (this.config.host == null) {
+      console.warn('No database host was specified, \'localhost\' will be used.');
+    }
+
+    if (this.config.database == null) {
+      throw new Error('No database name was specified.');
     }
   }
 
