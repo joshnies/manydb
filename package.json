@@ -4,6 +4,16 @@
   "description": "Use different databases within one API.",
   "main": "index.js",
   "author": "Joshua Nies",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshnies/manydb"
+  },
+  "keywords": [
+    "db",
+    "pg",
+    "postgres",
+    "mysql"
+  ],
   "license": "MIT",
   "private": false,
   "dependencies": {
