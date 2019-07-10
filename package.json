@@ -16,7 +16,7 @@
   ],
   "license": "MIT",
   "private": false,
-  "dependencies": {
+  "peerDependencies": {
     "mysql": "^2.17.1",
     "pg": "^7.11.0"
   }
